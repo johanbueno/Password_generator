@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="javascript" href="password.js">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2">
+
+            </div>
+
+
+            <div class="col-md-8">
+
+                <h1>
+                    Password Generator
+                </h1>
+                <h3>Generate a Password</h3>
+                <hr>
+                <div id="password">
+
+                </div>
+                <hr>
+                <span>
+                    <button class="btn btn-primary btn-lg ">Generate Password</button>
+                </span>
+                <span>
+                    <button class="btn btn-secondary btn-lg">Copy to Clipboard </button>
+                </span>
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+    </div>
+
+    <script>
+
+
+userCharacter = prompt("How many Character Do you want on your Password");
+        // userLowerCase = prompt("Do you want Lowercase Characters"),
+        // userUpperCase = prompt("Do you want Uppercase Characters"),
+        // userNumbers = prompt("Do you want Numbers")
+        // userSpecialCharacter = prompt("Do you want Special Characters");
+        //  function password(userCharacter,userLowerCase,userNumbers,userSpecialCharacter,userUpperCase) {
+        var string = "abcdefghijklmnopqrstuvwxyz"; //to upper 
+        var numeric = '0123456789';
+        var punctuation = '!@#$%^&*()_+~`|}{[]\:;?><,./-=';
+
+
+
+            if (typeof string === "string") {
+
+                for (i = 0; i < string.length; i++) {
+                    
+                    stringResult = string[(Math.floor(Math.random() * userCharacter))];
+
+                }
+                console.log(stringResult);
+            }
+            
+            console.log(string[20]);
+
+
+
+
+
+//     // works 
+//     document.getElementById("password").innerHTML = password;
+
+
+//     function password_generator( len ) {
+//     var length = (len)?(len):(10);
+//     var string = "abcdefghijklmnopqrstuvwxyz"; //to upper 
+//     var numeric = '0123456789';
+//     var punctuation = '!@#$%^&*()_+~`|}{[]\:;?><,./-=';
+//     var password = "";
+//     var character = "";
+//     var crunch = true;
+//     while( password.length<length ) {
+//         entity1 = Math.ceil(string.length * Math.random()*Math.random());
+//         entity2 = Math.ceil(numeric.length * Math.random()*Math.random());
+//         entity3 = Math.ceil(punctuation.length * Math.random()*Math.random());
+//         hold = string.charAt( entity1 );
+//         hold = (password.length%2==0)?(hold.toUpperCase()):(hold);
+//         character += hold;
+//         character += numeric.charAt( entity2 );
+//         character += punctuation.charAt( entity3 );
+//         password = character;
+//     }
+//     password=password.split('').sort(function(){return 0.5-Math.random()}).join('');
+//     return password.substr(0,len);
+// }
+
+// console.log( password_generator() );
+
+
+
+
+
+    </script>
+</body>
+
+</html>

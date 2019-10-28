@@ -1,0 +1,10 @@
+#password {
+
+    width: 100%;
+    height: 250px;
+    border: 2px black solid;
+}
+.generate{
+    color: white;
+    background-color: red;
+}
