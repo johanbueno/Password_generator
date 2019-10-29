@@ -47,12 +47,10 @@
 
 
 userCharacter = prompt("How many Character Do you want on your Password");
-        // userLowerCase = prompt("Do you want Lowercase Characters"),
-        // userUpperCase = prompt("Do you want Uppercase Characters"),
+        userLowerCase = prompt("Do you want Lowercase Characters"),
+        userUpperCase = prompt("Do you want Uppercase Characters"),
         userNumbers = prompt("Do you want Numbers")
-        // userSpecialCharacter = prompt("Do you want Special Characters");
-        //  function password(userCharacter,userLowerCase,userNumbers,userSpecialCharacter,userUpperCase) {
-        // var string = "abcdefghijklmnopqrstuvwxyz"; //to upper 
+        userSpecialCharacter = prompt("Do you want Special Characters");
         
         function stringResult(length) {
    var result1 = '';
@@ -93,27 +91,19 @@ console.log(stringResult(userCharacter));
 
 console.log(stringResultUpperCase(userCharacter));
 
+    function SpecialCharacter (length) {
 
+    var punctuation = '!@#$%^&*()_+~`|}{[]\:;?><,./-=';
+    var result4= " ";
+    var userCharacter = punctuation.length;
 
-
-
-
-
-
-            // if (typeof string === "string") {
-
-            //     for (i = 0; i < string.length; i++) {
-                    
-            //         stringResult = string[(Math.floor(Math.random() * userCharacter))];
-
-            //     }
-            //     console.log(stringResult);
-            // }
-            
-            // console.log(string[20]);
-
-
-
+    for (var i=0; i< length; i++) {
+        result4 += punctuation.charAt(Math.floor(Math.random() *userCharacter));
+    }
+    return result4;
+    
+    }
+    console.log(SpecialCharacter (userCharacter));
 
 
 //     // works 
@@ -124,7 +114,7 @@ console.log(stringResultUpperCase(userCharacter));
 //     var length = (len)?(len):(10);
 //     var string = "abcdefghijklmnopqrstuvwxyz"; //to upper 
 //     var numeric = '0123456789';
-//     var punctuation = '!@#$%^&*()_+~`|}{[]\:;?><,./-=';
+    // var punctuation = '!@#$%^&*()_+~`|}{[]\:;?><,./-=';
 //     var password = "";
 //     var character = "";
 //     var crunch = true;
