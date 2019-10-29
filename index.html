@@ -54,33 +54,50 @@ userCharacter = prompt("How many Character Do you want on your Password");
         //  function password(userCharacter,userLowerCase,userNumbers,userSpecialCharacter,userUpperCase) {
         // var string = "abcdefghijklmnopqrstuvwxyz"; //to upper 
         
-        var punctuation = '!@#$%^&*()_+~`|}{[]\:;?><,./-=';
-
         function stringResult(length) {
-   var result = '';
+   var result1 = '';
    var string = "abcdefghijklmnopqrstuvwxyz";
    var userCharacter= string.length;
    for ( var i = 0; i < length; i++ ) {
-      result += string.charAt(Math.floor(Math.random() * userCharacter));
+      result1 += string.charAt(Math.floor(Math.random() * userCharacter));
    }
-   return result;
+   return result1;
 }
 
 console.log(stringResult(userCharacter));
 
 
     function numericResult (length) {
-        var result = " ";
+        var result2 = " ";
         var numeric = '0123456789';
-        var userNumbers = numeric.length;
+        var userCharacter = numeric.length;
          for (var i =0;i < length;i++) {
-             result += numeric.charAt(Math.floor(Math.random()* userCharacter));
+             result2 += numeric.charAt(Math.floor(Math.random()* userCharacter));
 
          }
-         return result;
+         return result2;
         
     }
     console.log(numericResult(userCharacter));
+
+    function stringResultUpperCase(length) {
+   var result3 = '';
+   var string = "abcdefghijklmnopqrstuvwxyz";
+   var string3 = string.toUpperCase();
+   var userCharacter= string.length;
+   for ( var i = 0; i < length; i++ ) {
+      result3 += string3.charAt(Math.floor(Math.random() * userCharacter));
+   }
+   return result3;
+}
+
+console.log(stringResultUpperCase(userCharacter));
+
+
+
+
+
+
 
 
             // if (typeof string === "string") {
