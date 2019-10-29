@@ -49,26 +49,51 @@
 userCharacter = prompt("How many Character Do you want on your Password");
         // userLowerCase = prompt("Do you want Lowercase Characters"),
         // userUpperCase = prompt("Do you want Uppercase Characters"),
-        // userNumbers = prompt("Do you want Numbers")
+        userNumbers = prompt("Do you want Numbers")
         // userSpecialCharacter = prompt("Do you want Special Characters");
         //  function password(userCharacter,userLowerCase,userNumbers,userSpecialCharacter,userUpperCase) {
-        var string = "abcdefghijklmnopqrstuvwxyz"; //to upper 
-        var numeric = '0123456789';
+        // var string = "abcdefghijklmnopqrstuvwxyz"; //to upper 
+        
         var punctuation = '!@#$%^&*()_+~`|}{[]\:;?><,./-=';
 
+        function stringResult(length) {
+   var result = '';
+   var string = "abcdefghijklmnopqrstuvwxyz";
+   var userCharacter= string.length;
+   for ( var i = 0; i < length; i++ ) {
+      result += string.charAt(Math.floor(Math.random() * userCharacter));
+   }
+   return result;
+}
+
+console.log(stringResult(userCharacter));
 
 
-            if (typeof string === "string") {
+    function numericResult (length) {
+        var result = " ";
+        var numeric = '0123456789';
+        var userNumbers = numeric.length;
+         for (var i =0;i < length;i++) {
+             result += numeric.charAt(Math.floor(Math.random()* userCharacter));
 
-                for (i = 0; i < string.length; i++) {
+         }
+         return result;
+        
+    }
+    console.log(numericResult(userCharacter));
+
+
+            // if (typeof string === "string") {
+
+            //     for (i = 0; i < string.length; i++) {
                     
-                    stringResult = string[(Math.floor(Math.random() * userCharacter))];
+            //         stringResult = string[(Math.floor(Math.random() * userCharacter))];
 
-                }
-                console.log(stringResult);
-            }
+            //     }
+            //     console.log(stringResult);
+            // }
             
-            console.log(string[20]);
+            // console.log(string[20]);
 
 
 
