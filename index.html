@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="javascript" href="password.js">
+
     <title>Document</title>
 </head>
 
@@ -21,23 +21,34 @@
             </div>
 
 
-            <div class="col-md-8">
+            <div class="col-md-8" >
 
                 <h1>
                     Password Generator
                 </h1>
-                <h3>Generate a Password</h3>
+                <br>
+                <br>
+                <div class="frame">
+                    <h3>Generate a Password</h3>
                 <hr>
                 <div id="password">
 
                 </div>
                 <hr>
-                <span>
-                    <button class="btn btn-primary btn-lg ">Generate Password</button>
-                </span>
-                <span>
-                    <button class="btn btn-secondary btn-lg">Copy to Clipboard </button>
-                </span>
+                <div class="row">
+                    <div class="col-md-6">
+                        <button class="btn-generate">Generate Password</button>
+                    </div>
+                    <div class="col-md-6">
+                        <button class="btn-secondary">Copy to Clipboard </button>
+                    </div>
+                    
+                </div>
+                
+                    
+                
+                </div>
+                
             </div>
             <div class="col-md-2"></div>
         </div>
@@ -47,22 +58,23 @@
 
 
 userCharacter = prompt("How many Character Do you want on your Password");
-        userLowerCase = prompt("Do you want Lowercase Characters"),
-        userUpperCase = prompt("Do you want Uppercase Characters"),
-        userNumbers = prompt("Do you want Numbers")
-        userSpecialCharacter = prompt("Do you want Special Characters");
+        // userLowerCase = prompt("Do you want Lowercase Characters"),
+        // userUpperCase = prompt("Do you want Uppercase Characters"),
+        // userNumbers = prompt("Do you want Numbers")
+        // userSpecialCharacter = prompt("Do you want Special Characters");
         
-        function stringResult(length) {
+        function stringResult() {
    var result1 = '';
    var string = "abcdefghijklmnopqrstuvwxyz";
    var userCharacter= string.length;
-   for ( var i = 0; i < length; i++ ) {
-      result1 += string.charAt(Math.floor(Math.random() * userCharacter));
+   for ( var i = 0; i < parseInt(userCharacter); i++ ) {
+      result1 += string.charAt(Math.floor(Math.random() * parseInt(userCharacter)));
    }
    return result1;
 }
 
 console.log(stringResult(userCharacter));
+
 
 
     function numericResult (length) {
@@ -105,39 +117,109 @@ console.log(stringResultUpperCase(userCharacter));
     }
     console.log(SpecialCharacter (userCharacter));
 
+    function password () {
+        var result1 = stringResult
+        var value  = result1;
+        console.log(value);
+        return value;
 
-//     // works 
-//     document.getElementById("password").innerHTML = password;
+    }
+    var pwdChoices = {
+            pwdLength: 0,
+            pwdNumber: true,
+            pwdSpecial: true,
+            pwdUpper: true,
+            pwdLower: true,
+        }
 
+    //     function generatePassword() {
+            
+    //         var pwdCharcters = "";
+    //         lowerCase = "abcdefghijklmnopqrstuvwxyz";
+    //         upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    //         numeric = "0123456789";
+    //         special = "!@#$%^&*(){,}[]=<>/.";
+    //         yourPassword = "";
+       
+    // var typeSelected = 0;
+        
 
-//     function password_generator( len ) {
-//     var length = (len)?(len):(10);
-//     var string = "abcdefghijklmnopqrstuvwxyz"; //to upper 
-//     var numeric = '0123456789';
-    // var punctuation = '!@#$%^&*()_+~`|}{[]\:;?><,./-=';
-//     var password = "";
-//     var character = "";
-//     var crunch = true;
-//     while( password.length<length ) {
-//         entity1 = Math.ceil(string.length * Math.random()*Math.random());
-//         entity2 = Math.ceil(numeric.length * Math.random()*Math.random());
-//         entity3 = Math.ceil(punctuation.length * Math.random()*Math.random());
-//         hold = string.charAt( entity1 );
-//         hold = (password.length%2==0)?(hold.toUpperCase()):(hold);
-//         character += hold;
-//         character += numeric.charAt( entity2 );
-//         character += punctuation.charAt( entity3 );
-//         password = character;
-//     }
-//     password=password.split('').sort(function(){return 0.5-Math.random()}).join('');
-//     return password.substr(0,len);
-// }
+    //    var lengthChoice = parseInt(prompt("Enter the Character Length"));
 
-// console.log( password_generator() );
+    //         if (lengthChoice > 7 && lengthChoice < 129) {
+    //             pwdChoices.pwdLength = lengthChoice;
+    //         }
+    //         else {
+    //             alert("That is not valid. Pleae enter a number between 8 & 128");
+    //             return;
+    //         }
 
+    //      var numericChoice = confirm("Press OK if you would like Numbers");
 
+    //         if (numericChoice === true) {
+    //             typeSelected = typeSelected + 1;
+    //             pwdChoices.pwdNumber = true;
+    //             // pwdCharcters = pwdCharacters + numeric;
+    //             pwdCharcters += numeric;
 
+    //         } else {
+    //             pwdChoices.pwdNumber = false;
+    //         }
 
+    //         var upperChoice = confirm("Press OK if you would like upper case letters");
+
+    //         if (upperChoice === true) {
+    //             typeSelected = typeSelected + 1;
+    //             pwdChoices.pwdUpper = true;
+    //             pwdCharcters += upperCase;
+    //         } else {
+    //             pwdChoices.pwdUpper = false;
+    //         }
+
+    //         var lowerChoice = confirm("Press OK if you would like lower case letters");
+    //         if (lowerChoice === true) {
+    //             typeSelected = typeSelected + 1;
+    //             pwdChoices.pwdLower = true;
+    //             pwdCharcters += lowerCase;
+    //         } else {
+    //             pwdChoices.pwdLower = false;
+    //         }
+
+    //         var specialChoice = confirm("Press OK if you would like special characters");
+    //         if (specialChoice === true) {
+    //             typeSelected = typeSelected + 1;
+    //             pwdChoices.pwdSpecial = true;
+    //             pwdCharcters += special;
+    //         } else {
+    //             pwdChoices.pwdSpecial = false;
+    //         }
+
+    //         if (typeSelected === 0) {
+    //             alert("You must select at least one type");
+    //             typeSelected = 0;
+    //             return;
+    //         }
+           
+
+    //         for (var i = 0; i < pwdChoices.pwdLength; i++) {
+    //             var getChar = pwdCharcters[Math.floor(Math.random() * pwdCharcters.length)];
+    //             yourPassword += getChar;
+    //         }
+
+    //         document.getElementById("pswd-box").innerHTML = yourPassword;
+        
+    //     }
+
+    //     function clipboard() {
+    //          var copyText = document.getElementById('pswd-box');
+    //             console.log("copy " + copyText);
+    //             console.log(yourPassword);
+    //             copyText.select();
+    //             copyText.setSelectionRange(0, 99999);
+    //             document.execCommand("copy");
+    //             alert("Copied the text: " + yourPassword);
+    //         }
+   
 
     </script>
 </body>
